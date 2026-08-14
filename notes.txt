@@ -1,0 +1,96 @@
+enumerated means that something has a defined set of values it can hold.
+For example, we will alwasy have sunday - saturday. 
+static and final, mean that those values cant be changed, but data types
+can change during the course of a program and enumerated data types allow for that
+to happen. Additionally, an enum is a refernce type which means it behaves 
+more like a class or an interface. This means you can create methods and
+variables inside the enum declaration. 
+
+ENUM DECLARATION EXAMPLE
+
+public enum DayOfWWeek{
+	SUNDAY,
+	MONDAY,
+	TUESDAY,
+	WEDNESDAY,
+	THURSDAY,
+	FRIDAY,
+	SATURDAY;
+}
+
+we can also assign numeric values to those days, for example
+
+public enum DayOfWeek{
+	SUNDAY(0),
+	MONDAY(1),
+	TUEDAY(2),
+	WEDNESDAY(3),
+	THURSDAY(4),
+	FRIDAY(5),
+	SATURDAY(6);
+
+	private int value;
+	private DayOfWeek(int value){ // constructor
+		this.value = value;
+	}
+}
+
+Now an enum is actually super sick becaause the point of it is making accessing
+variables easier. Like if someone started typing in the name of the enum
+DayOfWeek. the predefined values will show up. 
+
+userInput via scanner
+example:
+
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		Scanner readme = new Scanner(System.in);
+		
+		System.out.println("Enter 2 numbers pls");
+		double n1, n2;
+		// entering after each double
+		n1 = readme.nextDouble();
+		n2 = readme.nextDouble();
+	}
+}
+
+for proofing, you can have a line like
+	while(!readme.hasNextDouble()) to make sure the input has a valid double
+
+
+
+	}
+}
+
+
+objects vs primitives
+Alright so, basically you have a primitive int, and an object Integer.
+Each of the primitives has their corresponding wrapper. In Java, a wrapper class
+is an object-oriented class that encapsulates a primitive data type (like int,
+double, or boolean) into an object.  This mechanism allows primitive values to be
+treated as objects, enabling their use in collections (such as ArrayList or 
+HashMap), generics, and APIs that require object references rather than 
+raw data types.
+
+to convert an Integer into an int you can do this
+
+public class Main{
+	public static void main(String[] args) {
+		Integer myInt = new Integer(5000);
+		System.out.println("Integer value = " + myInt);
+		// convert it now
+		int newInt = myInt;
+		System.out.println("int value = " = newInt);
+	}
+	}
+
+the output of the above will be:
+	Integer value = 5000
+	int value = 5000
+
+Java also has Run-time Magic which can convert it, as shown above by itself 
+at run time when you have an Integer object put into an int argument. Memory of
+int vs Integer is 4 bytes vs 16-24 bytes. 
+
+
