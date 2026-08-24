@@ -93,4 +93,92 @@ Java also has Run-time Magic which can convert it, as shown above by itself
 at run time when you have an Integer object put into an int argument. Memory of
 int vs Integer is 4 bytes vs 16-24 bytes. 
 
+Interfaces are like a class, but it only has fields and methods. It kind of
+lets you implement multiple inheritance, but not fully. here is an example
 
+package multiexample;
+interface Scan {
+	public String scanDoc(String doc);
+}
+
+interface Copy{
+	public String copyDoc(String doc);
+}
+
+public class MultiExample implements Scan, Copy {
+	@Override
+	public String scanDoc(String doc){
+		System.out.println("Scanning the Document = " + doc);
+		return doc;
+		}
+	@Override
+	public String copyDoc(String doc) {
+		System.out.println("Copying the Document = " + doc);
+		return doc;
+	}
+
+	public static void main(String[] args){
+		MultiExample multi = new MultiExample();
+		multi.scanDoc("Rates.doc");
+		multi.copyDoc("Rates.doc");
+	}
+}
+
+the @Override command is added to make sure youre calling/creating the desired
+method. Healthy habit to have as well. 
+
+Throwing and catching exceptions is very important. The difference between the two
+is that one solves the issue immediately, and the other makes it someone else's 
+problem. An example of this is will be shown with a password maker
+
+BAD EXAMPLE:
+public void setPassword(String password) {
+    // No 'if' check. No 'throw'. Just straight to business.
+    this.password = password.toUpperCase();
+}
+
+// OTHER DEVELOPER WORKING AND CALLING YOUR METHOD
+public class Main {
+    public static void main(String[] args) {
+        User user = new User();
+
+        // Dave doesn't know he HAS to check for null.
+        // He just got this password from a user form that was left blank.
+        String userInput = null;
+
+        user.setPassword(userInput); // Dave calls your method.
+
+        System.out.println("User created successfully!");
+    }
+}
+
+// GOOD EXAMPLE
+public void setPassword(String password) {
+    if (password == null) {
+        throw new IllegalArgumentException("Password cannot be null, Dave!");
+    }
+    if (password.isEmpty()) {
+        throw new IllegalArgumentException("Password cannot be empty!");
+    }
+    this.password = password.toUpperCase(); // Safe! We KNOW password is good.
+}
+
+public class Main {
+    public static void main(String[] args) {
+        User user = new User();
+        String userInput = null;
+
+        try {
+            user.setPassword(userInput); // Dave calls your method.
+            System.out.println("User created successfully!");
+        } catch (IllegalArgumentException e) {
+            // DAVE catches the EXACT error YOU threw.
+            System.out.println("Error: " + e.getMessage());
+            // Prints: "Error: Password cannot be null, Dave!"
+            // The program DOES NOT crash. It just prints a nice message.
+        }
+    }
+}
+
+so a simpler way to look at it, is by just reading the words. When encountering
+an exception, you can throw it to be caught by another method. 

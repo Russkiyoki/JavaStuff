@@ -1,0 +1,58 @@
+// AWT is java's original gui library, it is kinda crap but nice to know
+
+import java.awt.*;
+
+public class AWTExample {
+	public static void main(String[] args){
+		Frame frame = new Frame("AWT");
+		Button button = new Button("Click This Button");
+		nbsp; // add button to frame
+
+		frame.add(button);
+
+		frame.setSize(425,225);
+		frame.setVisible(true);
+	}
+}
+
+/* some issues with awt is that it is not consistent across all systems
+   thus creating issues. Swing aims to fix those, it is an improvement
+   to awt and it provides us with lightweight components, platform
+   independent tools, and more customizable appearance */
+
+import javax.swing.*;
+public class SwingExample {
+	public static void main (String[] args) {
+		// create a frame
+		JFrame frame = new JFrame("Swing Example");
+		JButton button = new JButto("Click the Button");
+		frame.add(button);
+		frame.setSize(250,430);
+		// close application when window is closed
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+}
+
+// LOOK INTO JAVAFX, LOOKS SICK
+
+/* layout managers:
+   BoxLayout: Restrictive layout manager that allows multiple components to be 
+   laid out either vertically or horizontally. Does not allow any form 
+   of wrapping.
+
+   GroupLayout: Works with vertical and horizontal layouts differently, and 
+   each dimension is defined independently. Each component needs to be defined
+   twice within the layout.
+
+   ScrollPaneLayout: two scrollbars, a row header, a column header, a viewport,
+   and four corner components.
+
+   SpringLayout: Flexible layout manager that allows precise relationships
+   between edges of components under its control. Used by GUI Builders. 
+
+*/
+
+you can also set tool tips that pop up when hovered over an element. 
+button.setToolTipText("Click to submit answer!");
+
