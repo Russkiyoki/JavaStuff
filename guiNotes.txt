@@ -56,3 +56,8 @@ public class SwingExample {
 you can also set tool tips that pop up when hovered over an element. 
 button.setToolTipText("Click to submit answer!");
 
+In Java Swing, we can use the JList class to create a list of elements from which users can select one or more items. A JList can be used in a search selector, a birth day/month/year selector, etc. Tables are used in numerous applications and are an excellent way to display tabular data in an organized fashion.
+
+The Swing JTable class is perfect for creating a table with column headings and filled with data (e.g., from an array). For many Swing applications, we still have to rely upon the AWT framework foundation, which is why we import events from AWT (Abstract Window Toolkit) to provide our Swing components with interactivity.
+
+
