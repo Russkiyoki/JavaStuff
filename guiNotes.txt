@@ -56,3 +56,9 @@ public class SwingExample {
 you can also set tool tips that pop up when hovered over an element. 
 button.setToolTipText("Click to submit answer!");
 
+One cool function of Swing is having a file picker. User can upload files
+easily based on gui. the JFileChooser has 3 constructors:
+	JFileChooser() - look in the user's default directory
+	JFileChooser(File currentDirectory) - Construct with a File instance as the path
+	JFileChooser(String currentDirectoryPath) - construct JFileChooser passing in a specific path
+
