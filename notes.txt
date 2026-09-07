@@ -182,3 +182,21 @@ public class Main {
 
 so a simpler way to look at it, is by just reading the words. When encountering
 an exception, you can throw it to be caught by another method. 
+
+Using a JDBC (Java Database Connectivity) is an api that helps connections to
+databases. It provides a simple efficient way to interact with database. Java
+developers need to know JDBC because: 
+	Its a simplified way to run SQL statements and handle exceptions
+	its efficient data management
+	its secure data management
+	its platform-independent
+To use JDBC you need to get the platform-specific driver; if youre using mysql
+you'd need the mysql driver (Connector/J)  for JDBC. You could use Maven to 
+connect it ot your project. E.g:
+	<dependency>
+		<groupID>mysql</groupID>
+		<artifactId>mysql-connector-java</artifactID>
+		<version>8.0.26</version>
+	</dependency>
+I will have more notes on this in another file dedicated to maven. Google the
+rest if you need to.

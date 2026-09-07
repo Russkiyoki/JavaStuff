@@ -1,0 +1,12 @@
+Maven
+
+Maven is not a virtual environment, it is rather a build automation tool
+and dependency manager for java projects. It comes in handy because it 
+does so much such as 
+	Dependency Management ( downloads JAR files automatically)
+	Build tool ( compiles, tests, packages into jar/war)
+	Project Organizer ( Enforces standard folder structure)
+	Lifecycle Manager ( clean, compile, test, package)
+
+study and apply it later
+
