@@ -1,0 +1,49 @@
+This is an addon to my existing /advanced/jdbcStuff.java 
+
+in jdbcStuff.java, we learned how to make a connection, but it is also good to know
+how to use that connection with CRUD operations. In order to use CRUD operations in 
+a java application, you need to import additional interfaces such as
+
+	import java.sql.Statement; // contains static sql statements
+	import java.sql.PreparedStatement; // Stores compiled SQL statement
+	import java.sql.ResultSet; // Stores the result of the SQL Statements
+
+In previous courses, we learned why using "?" is important for our queries.
+It is important because it creates multiple safety nets and moments for
+our db to look for mistakes or things that are very stupid by user or
+even for someone with a malicious intent to sql-inject.
+
+Below is an example of a create operation
+	String query = "INSERT INTO authors(author_id, author_first_name, author_last_name) VALUES (?,?,?)";
+	PreparedStatement createStatement = conn.prepareStatement(query);
+	// set value 1 to 101, value 2 to james, value 3 to Smith.
+	createStatement.setString(1,"101");
+	createStatement.setString(2, "James");
+	createStatement.setString(3, "Smith");
+
+Below is an example of a read operation
+	String query = "SELECT * FROM authors";
+	Statement statement = conn.createStatement();
+	ResultSet results = statement.executeQuery(query);
+	while (results.next()){
+		int aurhotId = results.getInt("author_id);
+		String authorFirstName = results.getString("author_first__name");
+		String authorLastName = results.getString("author_last_name");
+		System.out.println(authorId + " " + authorFirstName + " " + authorLastName);
+	}
+
+Below is an example of an update operation
+	String query = "UPDATE authors SET author_first_name = ? WHERE author_id = ?";
+	PreparedStatement updateStatement = conn.prepareStatement(query);
+	updateStatement.setString(1, "Thomas");
+	updateStatement.setInt(2, "101");
+	int rowsUpdated = updateStatement.executeUpdate();
+
+Below is an example of a delete operation
+	String query = "DELETE FROM authors WHERE author_id + ?";
+	PreparedStatement deleteStatement = conn.prepareStatement(query);
+	deleteStatement.setInt(1, "101");
+	int rowsDeleted = deleteStatement.executeUpdate();
+
+Remember to also have exception errors in places where an error is expected to happen,
+such as establishing connections with the db or having a CRUD operation happen. 
