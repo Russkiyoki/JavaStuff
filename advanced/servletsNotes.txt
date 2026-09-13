@@ -1,0 +1,27 @@
+Servlets are back-end tech allowing java devs to efficiently develop web apps
+by handling user requests. They are used as a controller in the mvc pattern.
+They can be used in database connection, session management, dynamic web page, etc
+
+advantages:
+	Platform independence: they run on any platform that supports JVM
+	Integration: They can be integrated with JSP, JSF, or other techs
+	Security: They allow java devs to implement a secure way to build web apps
+		by using authorization and authentication
+	Reusablity: They allow java devs to reuse servlets across multiple apps
+	Maintenance: They are easy to maintain. Java devs can change a servlet w/o
+		modifying other elements of their web app.
+	
+Servlet Mechanism:
+1. If a user inputs a url, http request delivers it to servlet container
+2. Servlet container creates HttpServletRequest object and HttpServletResponse obj	for this request.
+3. Maps the request with the servlet in a web.sml file.
+4. calls the service method on the thread
+5. the public service method calls the protected service method
+6. Calls doGet() or doPost() depending upon the type of request (GET/POST)
+7. doGet() or doPost() method creates a dynamic page and then sends the response
+	back to the client's web browser through the HttpServletResponse object.
+8. After sending the response, the container destroys the request and response obj
+9. A new instance will be created if required by another client requesting same
+	servlet. 
+
+

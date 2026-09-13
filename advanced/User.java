@@ -1,0 +1,29 @@
+// User.java
+// example code to handle a signing-in page
+
+public class User {
+	private int id;
+	private String username;
+	private String password;
+
+	public int getId(){
+		return id;
+	}
+	private void setId(int id){
+		this.id = id;
+	}
+
+	public String getUsername(){
+		return username;
+	}
+	private void setUsername(String username){
+		this.username = username;
+	}
+
+	public String getPassword(){
+		return password;
+	}
+	private void setPassword(String password){
+		this.password = password;
+	}
+}

@@ -1,0 +1,17 @@
+JavaBeans are reusable software components. They are based on OOP and 
+the Model-view-controller framework. They are frequently used in projects
+that require graphical user interfaces and Enterprise JavaBeans. Web applications
+written in JSP use javabeans. Javabeans can be used for multiple jsp pages.
+
+Advantages
+	Reusability: they are reusable across different applications.
+	Platform Independence: They are platform independent, they allow devs
+		to use the same code on different operating systems.
+	Encapsulation: They support encapsulation. Java devs can easily manage
+		their code as javabeans bundle the data and methods into 1 class
+	Extensiblity: They can easily extend. Adding new properties or methpods
+		and create subclasses that inherit the properties and methods of the class
+	Efficient Form Processing: They can efficiently deliver many parameters
+		of a form.
+	
+
